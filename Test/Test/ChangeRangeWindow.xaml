@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
         xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
-             Height="800" Width="1000">
+             Height="800" Width="1400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>

@@ -24,7 +24,6 @@ namespace Test
     /// </summary>
     public partial class ShakingScreen : UserControl
     {
-        int _counter = 0;
         private Timer _timer;
         private uint _timerInterval = 100;// Interval of the timer to generate data in ms        
         private int _bufferSize = 60; // Number of points to append to each channel each timer tick
@@ -76,9 +75,6 @@ namespace Test
 
         private void OnTick(object sender, EventArgs e)
         {
-            _counter++;
-            
-            Dispatcher.BeginInvoke(new System.Threading.ThreadStart(() => btnStart.Content = _counter.ToString()));
             if (!isBusy)
             {
                 isBusy = true;
