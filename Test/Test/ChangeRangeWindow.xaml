@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Test.ChangeRangeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test"
+        mc:Ignorable="d"
+        xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+             Height="800" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition />
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <s:SciChartSurface x:Name="chart1" Grid.Row="1" Grid.Column="3">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AutoRange="Never"   />
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis AutoRange="Always" TextFormatting="0.00" Width="50"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}"/>
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface x:Name="chart2" Grid.Row="3" Grid.Column="3">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis x:Name="xAxis2" AxisTitle="Graph 2" AutoRange="Never" MajorDelta="4" MinorDelta="15" AutoTicks="False" >                   
+                    <s:NumericAxis.VisibleRange>
+                        <s:DoubleRange Max="60" Min="0"/>
+                    </s:NumericAxis.VisibleRange>
+                </s:NumericAxis>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis x:Name="yAxis2"  AutoRange="Always" Width="50"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}"  />
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="3" Orientation="Horizontal">
+            <Button x:Name="btnPrevRange" Content="Change range &lt;&lt;"  Click="btnPrevRange_Click" Width="100" Height="30" />
+            <Button x:Name="btnNextRange" Content="Change range &gt;&gt;"  Click="btnNextRange_Click" Width="100" Height="30" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5">
+        <Button x:Name="btnStartTimer" Content="Start timer" Height="30" Click="btnStartTimer_Click"/>
+        <Button x:Name="btnStopTimer" Content="Stop timer" Height="30" Click="btnStopTimer_Click"/>
+</StackPanel>
+    </Grid>
+</UserControl>

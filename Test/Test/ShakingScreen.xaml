@@ -1,0 +1,142 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Test.ShakingScreen"
+MinHeight="800" MinWidth="1000"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <s:SciChartSurface x:Name="chart1" Grid.Row="1" Grid.Column="1">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AxisAlignment="Left" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis AxisAlignment="Bottom"  FlowDirection="RightToLeft" AutoRange="Always"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries  DataSeries="{Binding DataSeries}" StrokeDashArray="0.1 0.1"/>
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface Grid.Row="1" Grid.Column="3">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft" AutoRange="Always"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}" AntiAliasing="False" />
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface Grid.Row="1" Grid.Column="5">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AxisAlignment="Left"  Visibility="Collapsed" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft" AutoRange="Always"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}" />
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface Grid.Row="1" Grid.Column="7">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis  AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft" AutoRange="Always"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}" />
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface Grid.Row="1" Grid.Column="9">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft" AutoRange="Never">
+                    <s:NumericAxis.VisibleRange>
+                        <s:DoubleRange Max="5" Min="0"/>
+                    </s:NumericAxis.VisibleRange>
+                </s:NumericAxis>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries  DataSeries="{Binding DataSeries}"/>
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface Grid.Row="1" Grid.Column="11">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft" AutoRange="Never">
+                    <s:NumericAxis.VisibleRange>
+                        <s:DoubleRange Max="5" Min="-5"/>
+                    </s:NumericAxis.VisibleRange>
+                </s:NumericAxis>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries  DataSeries="{Binding DataSeries}"/>
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface Grid.Row="1" Grid.Column="13">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries  DataSeries="{Binding DataSeries}"/>
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <s:SciChartSurface Grid.Row="1" Grid.Column="15">
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}"/>
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnStart" Content="Start" Grid.Column="0" Click="btnStart_Click"/>
+            <Button x:Name="btnStop" Content="Stop" Grid.Column="1" Click="btnStop_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>

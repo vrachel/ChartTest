@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Test.SomeOptionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+        xmlns:local="clr-namespace:Test"
+        mc:Ignorable="d"
+        MinHeight="800" MinWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition />
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <s:SciChartSurface x:Name="chart" Grid.Row="1" Grid.Column="1" >
+            <!-- BrightSpark -->
+            <s:SciChartSurface.XAxis>
+                <s:NumericAxis x:Name="chartXAxis" TickTextBrush="#FF1D3DDC" MinorsPerMajor="3" />
+            </s:SciChartSurface.XAxis>
+            <s:SciChartSurface.YAxis>
+                <s:NumericAxis x:Name="chartYAxis" TickTextBrush="#FF98DE1E" MinorsPerMajor="19"/>
+            </s:SciChartSurface.YAxis>
+            <s:SciChartSurface.RenderableSeries>
+                <s:FastLineRenderableSeries x:Name="fastLineRenderableSeries" StrokeDashArray="3,3" StrokeThickness="1"/>
+            </s:SciChartSurface.RenderableSeries>
+        </s:SciChartSurface>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <CheckBox x:Name="cbDrawMajorGridLinesX" Checked="cbDrawMajorGridLinesX_Checked" IsChecked="True" Unchecked="cbDrawMajorGridLinesX_Checked" Content="DrawMajorGridLinesX"/>
+                <CheckBox x:Name="cbDrawMajorGridLinesY" Checked="cbDrawMajorGridLinesY_Checked" IsChecked="True" Unchecked="cbDrawMajorGridLinesY_Checked" Content="DrawMajorGridLinesY"/>
+                <CheckBox x:Name="cbDrawMinorGridLinesX" Checked="cbDrawMinorGridLinesX_Checked" IsChecked="True" Unchecked="cbDrawMinorGridLinesX_Checked" Content="DrawMinorGridLinesX"/>
+                <CheckBox x:Name="cbDrawMinorGridLinesY" Checked="cbDrawMinorGridLinesY_Checked" IsChecked="True" Unchecked="cbDrawMinorGridLinesY_Checked" Content="DrawMinorGridLinesY"/>
+            </StackPanel>
+            <Button x:Name="btnChangeColor" Margin="15,0" Grid.Column="1"  Content="Change graph color" Click="btnChangeColor_Click" Width="130" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <StackPanel Orientation="Horizontal" Margin="15,0" Grid.Column="2" >
+                <TextBlock Text="Change Theme  " />
+                <ComboBox x:Name="cbTheme" Width="130" Height="30" ItemsSource="{Binding Source={x:Static s:ThemeManager.AllThemes}}" SelectionChanged="cbTheme_SelectionChanged" VerticalAlignment="Top"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
