@@ -24,9 +24,10 @@ namespace Test
     /// </summary>
     public partial class ShakingScreen : UserControl
     {
+        int _counter = 0;
         private Timer _timer;
         private uint _timerInterval = 100;// Interval of the timer to generate data in ms        
-        private int _bufferSize = 1000; // Number of points to append to each channel each timer tick
+        private int _bufferSize = 60; // Number of points to append to each channel each timer tick
 
         // X, Y buffers used to buffer data into the Scichart instances in blocks of BufferSize
         private double[] xBuffer;
@@ -75,6 +76,9 @@ namespace Test
 
         private void OnTick(object sender, EventArgs e)
         {
+            _counter++;
+            
+            Dispatcher.BeginInvoke(new System.Threading.ThreadStart(() => btnStart.Content = _counter.ToString()));
             if (!isBusy)
             {
                 isBusy = true;
@@ -86,7 +90,7 @@ namespace Test
                 for (int j = 0; j < _bufferSize; j++)
                 {
                     // Generate a new X,Y value in the random walk
-                    xValue = xValue + 0.000166;
+                    xValue = xValue + 0.14;
 
                     xBuffer[j] = xValue;
                     yBuffer[j] = Math.Sin(xValue);

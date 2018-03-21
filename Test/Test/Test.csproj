@@ -78,7 +78,6 @@
     <Compile Include="SomeOptionsWindow.xaml.cs">
       <DependentUpon>SomeOptionsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestConverter.cs" />
     <Compile Include="TestMainWindow.xaml.cs">
       <DependentUpon>TestMainWindow.xaml</DependentUpon>
     </Compile>

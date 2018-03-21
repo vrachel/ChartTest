@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
 xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Test.ShakingScreen"
-MinHeight="800" MinWidth="1000"
+MinHeight="800" MinWidth="1400"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,7 +34,7 @@ MinHeight="800" MinWidth="1000"
 
         <s:SciChartSurface x:Name="chart1" Grid.Row="1" Grid.Column="1">
             <s:SciChartSurface.XAxis>
-                <s:NumericAxis AxisAlignment="Left" VisibleRange="{Binding Range}"/>
+                <s:NumericAxis  AxisAlignment="Left" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
             <s:SciChartSurface.YAxis>
                 <s:NumericAxis AxisAlignment="Bottom"  FlowDirection="RightToLeft" AutoRange="Always"/>
