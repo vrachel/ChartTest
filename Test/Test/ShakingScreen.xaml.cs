@@ -1,4 +1,5 @@
-﻿using SciChart.Charting.Model.DataSeries;
+﻿using SciChart.Charting.Common.Extensions;
+using SciChart.Charting.Model.DataSeries;
 using SciChart.Charting.Visuals.Axes;
 using SciChart.Core.Helpers;
 using SciChart.Data.Model;
@@ -25,8 +26,8 @@ namespace Test
     public partial class ShakingScreen : UserControl
     {
         private Timer _timer;
-        private uint _timerInterval = 100;// Interval of the timer to generate data in ms        
-        private int _bufferSize = 60; // Number of points to append to each channel each timer tick
+        private uint _timerInterval = 200;// Interval of the timer to generate data in ms        
+        private int _bufferSize = 100; // Number of points to append to each channel each timer tick
 
         // X, Y buffers used to buffer data into the Scichart instances in blocks of BufferSize
         private double[] xBuffer;
@@ -86,7 +87,7 @@ namespace Test
                 for (int j = 0; j < _bufferSize; j++)
                 {
                     // Generate a new X,Y value in the random walk
-                    xValue = xValue + 0.14;
+                    xValue = xValue + 0.002;
 
                     xBuffer[j] = xValue;
                     yBuffer[j] = Math.Sin(xValue);

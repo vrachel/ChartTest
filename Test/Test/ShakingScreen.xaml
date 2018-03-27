@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
 xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Test.ShakingScreen"
-MinHeight="800" MinWidth="1400"
+
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -32,7 +32,10 @@ MinHeight="800" MinWidth="1400"
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <s:SciChartSurface x:Name="chart1" Grid.Row="1" Grid.Column="1">
+        <s:SciChartSurface x:Name="chart1" Grid.Row="1" Grid.Column="1" s:RenderSurfaceExtensions.RenderSurfaceType="HighQuality">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis  AxisAlignment="Left" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -44,6 +47,9 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.RenderableSeries>
         </s:SciChartSurface>
         <s:SciChartSurface Grid.Row="1" Grid.Column="3">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -51,10 +57,14 @@ MinHeight="800" MinWidth="1400"
                 <s:NumericAxis  AxisAlignment="Bottom" FlowDirection="RightToLeft" AutoRange="Always"/>
             </s:SciChartSurface.YAxis>
             <s:SciChartSurface.RenderableSeries>
-                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}" AntiAliasing="False" />
+                <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}" />
             </s:SciChartSurface.RenderableSeries>
         </s:SciChartSurface>
+     
         <s:SciChartSurface Grid.Row="1" Grid.Column="5">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis AxisAlignment="Left"  Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -65,7 +75,7 @@ MinHeight="800" MinWidth="1400"
                 <s:FastLineRenderableSeries DataSeries="{Binding DataSeries}" />
             </s:SciChartSurface.RenderableSeries>
         </s:SciChartSurface>
-        <s:SciChartSurface Grid.Row="1" Grid.Column="7">
+        <s:SciChartSurface Grid.Row="1" Grid.Column="7" s:RenderSurfaceExtensions.RenderSurfaceType="HighQuality">
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis  AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -77,6 +87,9 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.RenderableSeries>
         </s:SciChartSurface>
         <s:SciChartSurface Grid.Row="1" Grid.Column="9">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -92,6 +105,9 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.RenderableSeries>
         </s:SciChartSurface>
         <s:SciChartSurface Grid.Row="1" Grid.Column="11">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -107,6 +123,9 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.RenderableSeries>
         </s:SciChartSurface>
         <s:SciChartSurface Grid.Row="1" Grid.Column="13">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface />
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -118,6 +137,9 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.RenderableSeries>
         </s:SciChartSurface>
         <s:SciChartSurface Grid.Row="1" Grid.Column="15">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis AxisAlignment="Left" Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>

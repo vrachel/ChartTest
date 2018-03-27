@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
-        Title="TestMainWindow" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Background="LightGray">
+        Title="TestMainWindow"  Background="LightGray">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -19,7 +19,7 @@
             <ColumnDefinition />
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <Canvas x:Name="mainCanvas" Grid.Row="1" Grid.Column="3" MinHeight="800" MinWidth="1400" Background="#FF978A8A"/>
+        <ContentControl x:Name="mainCanvas" Grid.Row="1" Grid.Column="3" Background="#FF978A8A"/>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5">
             <Button x:Name="btnOpenShakingScreen" Content="Open Shaking screen" Height="30" Click="btnOpenShakingScreen_Click"  Margin="5"/>
             <Button x:Name="btnOpenMultiSeries" Content="Open Multi Series Screen" Height="30" Click="btnOpenMultiSeries_Click"  Margin="5"/>

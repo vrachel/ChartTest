@@ -28,8 +28,8 @@ namespace Test
 
         private void ChangeView(UserControl newView)
         {
-            mainCanvas.Children.Clear();
-            mainCanvas.Children.Add(newView);
+            mainCanvas.Content = null;
+            mainCanvas.Content = newView;
         }
 
         private void btnOpenMultiSeries_Click(object sender, RoutedEventArgs e)

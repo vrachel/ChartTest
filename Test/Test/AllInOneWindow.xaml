@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
          xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
-MinHeight="800" MinWidth="1400"
+
         >
     <UserControl.Resources>
         <local:StrokeRangePaletteProvider x:Key="StrokeRangePaletteProvider" MinRange="-0.02" MaxRange="0.4" />
@@ -77,6 +77,9 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.ChartModifier>
         </s:SciChartSurface>
         <s:SciChartSurface Grid.Row="3" Grid.Column="3">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis  Visibility="Collapsed" VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -120,6 +123,9 @@ MinHeight="800" MinWidth="1400"
         </s:SciChartSurface>
     
         <s:SciChartSurface Grid.Row="5" Grid.Column="3">
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis  VisibleRange="{Binding Range}"/>
             </s:SciChartSurface.XAxis>
@@ -145,6 +151,9 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.ChartModifier>
         </s:SciChartSurface>
         <s:SciChartSurface Grid.Row="1" Grid.Column="1" >
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
             <s:SciChartSurface.XAxis>
                 <s:NumericAxis  MajorDelta="20" MaxAutoTicks="100" MinorDelta="1" MinimalZoomConstrain="0" MinorsPerMajor="7" AutoRange="Always"/>
             </s:SciChartSurface.XAxis>
@@ -199,7 +208,10 @@ MinHeight="800" MinWidth="1400"
             </s:SciChartSurface.ChartModifier>
         </s:SciChartSurface>
             <s:SciChartSurface x:Name="sciChart" Grid.Row="5" Grid.Column="1" Margin="0 0 0 22">
-                <s:SciChartSurface.XAxis>
+            <s:SciChartSurface.RenderSurface>
+                <s:HighQualityRenderSurface/>
+            </s:SciChartSurface.RenderSurface>
+            <s:SciChartSurface.XAxis>
                     <s:NumericAxis AutoRange="Never" VisibleRange="{Binding Range2}"/>
                 </s:SciChartSurface.XAxis>
                 <s:SciChartSurface.YAxis>

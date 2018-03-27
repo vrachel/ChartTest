@@ -46,7 +46,11 @@ namespace Test
 
         private ObservableCollection<IRenderableSeries> renderableSeries;
 
-        public ObservableCollection<IRenderableSeries> RenderableSeries { get => renderableSeries; set => renderableSeries = value; }
+        public ObservableCollection<IRenderableSeries> RenderableSeries
+        {
+            get { return renderableSeries; }
+            set { renderableSeries = value; }
+        }
 
         public MultiSeriesWindow()
         {
